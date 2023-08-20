@@ -108,10 +108,8 @@ document.getElementById('theme').addEventListener('change', function() {
     document.documentElement.style.setProperty('--settings-bg-color', newSettingsBgColor);
     document.documentElement.style.setProperty('--form-bg-color', newFormBgColor);
   
-    // You can add more specific changes if needed
   });
     
 
 
-// Add similar functionality for other settings
 
