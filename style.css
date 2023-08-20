@@ -1,0 +1,241 @@
+:root {
+    --font-size: 16px;
+    --background-color: #333333;
+    --text-color: #fff;
+    --settings-bg-color: #555;
+    --form-bg-color: #444;
+}
+
+ .logo-h1, #note-form,.container .container-label, .settings-menu-content,
+.note, .card-footer, footer {
+    font-size: var(--font-size);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.form-control, .form-select {
+    width: 80%;
+    margin: 0 auto; /* centers the element if the parent is not using text-align: center */
+}
+
+.logo-h1, .container .container-label {
+    text-align: center;
+}
+
+.logo-h1 {
+    font-size: 35px;
+}
+
+.settings-button-container {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 999;
+}
+
+#settings-button {
+    background: linear-gradient(90deg, rgb(16, 37, 137) 0%, rgb(26, 1, 141) 100%);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#settings-button i {
+    color: rgb(244, 240, 240);
+}
+
+#settings-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(16, 19, 42, 0.7);
+}
+
+.settings-menu-hidden, .settings-menu-visible {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.settings-menu-visible {
+  display: block;
+  overflow: auto;
+}
+
+.settings-menu-content {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #f4f4f4; */
+  background-color: var(--background-color);
+  padding: 20px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.settings-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.close-settings {
+  align-self: flex-end;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.close-settings:hover {
+  color: #000;
+}
+
+/* Styles for the modal overlay */
+#confirmationModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Overlay other content */
+  }
+  
+  /* Styles for the modal content */
+  #confirmationModal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Styles for the close ("X") button */
+  #confirmationModal .modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa;
+  }
+  
+  #confirmationModal .modal-content .close:hover {
+    color: #dc3545;
+  }
+  
+  /* Styles for the question text */
+  #confirmationModal .modal-content p {
+    font-size: 16px;
+    margin: 15px 0;
+  }
+  
+  /* Styles for the "Yes" and "No" buttons */
+  #confirmationModal .modal-content button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff; /* Blue color for the "Yes" button */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #confirmationModal .modal-content button.no {
+    background-color: #dc3545; /* Red color for the "No" button */
+  }
+  
+  #confirmationModal .modal-content button:hover {
+    opacity: 0.8;
+  }
+  
+  
+  /* Styles for the notes */
+
+  #notes-container {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px; /* or padding-bottom: 20px; */
+
+  /* Add additional styles as needed */
+}
+
+  .note {
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+  .note h4 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .note p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .note small {
+    display: block;
+    color: #888;
+    font-size: 12px;
+  }
+  
+  /* Styles for the footer */
+  .card-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* background-color: #555; */
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-footer footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* (c) sign */
+  .card-footer::before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+  
+
+footer {
+    padding: 10px 0;
+}
+
+
+/* .bg-body-secondary {
+    background-color: #d9dbdc; /* Makes the Backround color of the container gray color * / 
+}
+
+.rounded {
+     border-radius: 40px; /* Makes the container rounded * /
+} */

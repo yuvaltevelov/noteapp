@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+</head>
+<body>
+    <div class="logo-h1"><span>Note Taking App</span></div>
+    <div class="container mt-5 rounded-top-4 rounded-bottom-1">
+        <form id="note-form">
+            <div class="row mb-3 justify-content-center">
+                <div class="col-md-6 text-center mt-3">
+                    <label for="note-title">Note Title</label>
+                    <input type="text" id="note-title" class="form-control" placeholder="...">
+                </div>
+                <div class="col-md-6 text-center mt-3">
+                    <label for="note-content">Note content</label>
+                    <textarea type="text" id="note-content" class="form-control" placeholder="..." cols="10" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+                <div class="col-md-6 text-center">
+                    <label for="target-date">Target date</label>
+                    <input type="date" id="target-date" class="form-control" placeholder="Target date">
+                </div>
+                <div class="col-md-6 text-center">
+                    <label for="color-select">Color</label>
+                    <select id="color-select" class="form-select">
+                        <option selected>Select color</option>
+                        <option value="#FF0000">Red</option>
+                        <option value="#0000FF">Blue</option>
+                        <option value="#008000">Green</option>
+                        <option value="#FFFF00">Yellow</option>
+                        <option value="#800080">Purple</option>
+                        <option value="#FFA500">Orange</option>
+                        <option value="#FFC0CB">Pink</option>
+                        <option value="#A52A2A">Brown</option>
+                        <option value="#808080">Grey</option>
+                        <option value="#000000">Black</option>
+                        <option value="#FFFFFF">White</option>                        
+                    </select>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-create-note btn-info mt-2 mb-3">Create Note</button>
+            </div>
+        </form> <!-- // Closing main form -->
+    </div> <!--  // Closing the container div -->
+    <div id="notes-container" class="container mt-3">
+        <div id="notes-container-row" class="row justify-content-center">
+            <!-- Notes will be appended here -->
+        </div>
+    </div>  
+    <div id="confirmationModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Are you sure you want to create this note?</p>
+            <button onclick="createNote()">Yes</button>
+            <button class="no" onclick="closeModal()">No</button>
+        </div>
+    </div>
+    <div class="settings-button-container">
+        <button id="settings-button">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div id="settings-menu" class="settings-menu-hidden">
+            <div class="settings-menu-content">
+                <span id="close-settings" class="close-settings">&times;</span>
+                <div>
+                    <label for="font-size">Font Size:</label>
+                    <select id="font-size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="theme">Theme:</label>
+                    <select id="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <!-- Add more settings as needed -->
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <footer class="text-center">All rights reserved &copy</footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
