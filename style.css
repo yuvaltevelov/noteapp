@@ -6,11 +6,24 @@
     --form-bg-color: #444;
 }
 
- .logo-h1, #note-form,.container .container-label, .settings-menu-content,
+ body, .logo-h1, #note-form,.container .container-label, .settings-menu-content, .btn-create-note,
 .note, .card-footer, footer {
     font-size: var(--font-size);
     background-color: var(--background-color);
     color: var(--text-color);
+    
+}
+
+.settings-menu-content, .settings-button-container {
+  font-size: 16px !important;
+}
+
+#note-form, .form-bg, .logo-h1 {
+  background-color: var(--form-bg-color);
+}
+
+#note-form {
+  border-radius: 25px;
 }
 
 .form-control, .form-select {
@@ -147,12 +160,13 @@
   #confirmationModal .modal-content p {
     font-size: 16px;
     margin: 15px 0;
+    color: #333333;
   }
   
   /* Styles for the "Yes" and "No" buttons */
   #confirmationModal .modal-content button {
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 4px 6px;
+    margin: 0.5px;
     border: none;
     background-color: #007bff; /* Blue color for the "Yes" button */
     color: #fff;
@@ -180,6 +194,7 @@
 }
 
   .note {
+    position: relative; /* This is necessary for positioning the close button */
     background-color: #555;
     border-radius: 5px;
     overflow: hidden;
@@ -202,6 +217,72 @@
     font-size: 12px;
   }
   
+  /* Hide the close button by default */
+  .note-close-button {
+    display: none;
+    position: absolute;
+    top: 5px;  /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
+    cursor: pointer;
+  }
+
+  /* Reveal the close button when the mouse hovers over the note */
+  .note:hover .note-close-button {
+    display: block;
+  }
+
+  .target-date, .create-date {
+    text-align: center !important;
+
+  }
+
+ /* Container for the scrollable content */
+.scrollable-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 150px;
+  position: relative;
+}
+
+/* Style for the scrollbar track */
+.scrollable-content::-webkit-scrollbar-track {
+  background-color: transparent; /* Making the track invisible */
+}
+
+/* Style for the scrollbar thumb */
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00f0f0, #05f04c); /* Futuristic gradient */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Glowing effect */
+}
+
+/* Style for the scrollbar thumb when hovering */
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #00ffff, #a5e215); /* Brighter gradient on hover */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.75); /* Increased glow on hover */
+}
+
+/* Style for the scrollbar itself */
+.scrollable-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Animation for glowing effect */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.75);
+  }
+}
+
+/* Applying the glowing animation to the thumb */
+.scrollable-content::-webkit-scrollbar-thumb {
+  animation: glow 1s infinite alternate;
+}
+
+
   /* Styles for the footer */
   .card-footer {
     position: fixed;
