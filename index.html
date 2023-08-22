@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
 </head>
 <body>
-    <div class="logo-h1"><span>Note Taking App</span></div>
+    <div class="container logo-h1"><span>Note Taking App</span></div>
     <div class="container mt-5 rounded-top-4 rounded-bottom-1">
         <form id="note-form">
             <div class="row mb-3 justify-content-center">
@@ -72,20 +73,21 @@
                 <span id="close-settings" class="close-settings">&times;</span>
                 <div>
                     <label for="font-size">Font Size:</label>
-                    <select id="font-size">
+                    <!-- <select id="font-size">
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
-                    </select>
+                    </select> -->
+                    <input type="number" name="font-size" id="font-size" value="16">
                 </div>
                 <div>
-                    <label for="theme">Theme:</label>
+                    <label class="mt-4 mb-1" for="theme">Theme:</label>
                     <select id="theme">
-                        <option value="light">Light</option>
                         <option value="dark">Dark</option>
+                        <option value="light">Light</option>
                     </select>
                 </div>
-                <!-- Po mosif od Settings -->
+                <!-- Add more settings as needed -->
             </div>
         </div>
     </div>
